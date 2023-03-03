@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Source+Sans+Pro:wght@400;600;700;800;900&display=swap')
+
+body
+    margin: 0
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
+    font-family: 'Inter', sans-serif
+    font-family: 'Source Sans Pro', sans-serif
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    line-height: 1.1
+
+*
+    box-sizing: border-box
+
+code
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
+
+ul
+    margin: 0
+    padding: 0
+
+button
+    cursor: pointer
+    padding: 0
+
+.slider-wrapper
+    width: 100%
+    overflow: hidden
+    .slide
+        flex-shrink: 0
+        img
+            width: 100%
+
+    .slides-wrapper
+        display: flex
+        transition: transform cubic-bezier(.65,.05,.36,1) 0.4s
+
+.search-button
+    background: none
+    border: none
+    svg
+        width: 35px
+        height: 35px
+
+.head-weather
+    padding: 15px
+    display: flex
+    justify-content: flex-end
+
+.weather-wrapper
+    width: 360px
+    height: 700px
+    box-shadow: 0px 30px 40px -10px rgba(0, 0, 0, 0.15)
+    border-radius: 30px
+    border: 6px solid #fff
+    background: rgba(#fff, 0.3)
+    backdrop-filter: blur(5px)
+
+.weather
+    background: linear-gradient(119.54deg, #FEE3BC 23.22%, #F39876 99.52%)
+    overflow: hidden
+
+.weather-app
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 100vh
+    position: relative
+    z-index: 2
+    &::before
+        content: ''
+        width: 800px
+        height: 500px
+        background-image: url('../img/app-bg.png')
+        position: absolute
+        z-index: -1
+        top: 40%
+        opacity: .6
+        transform: rotate(-30deg)
+
+.status-weather
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 5px 30px
+    img
+        width: 50%
+
+.weather-place
+    padding: 10px 20px
+    font-size: 40px
+    font-weight: 600
+    color: #313341
+
+.temp
+    display: flex
+    justify-content: center
+    flex-flow: column
+    font-size: 15px
+    width: 100%
+    color: #303345
+    text-align: center
+    .temp-current
+        font-size: 60px
+        font-weight: bold
+        line-height: 50px
+        position: relative
+        &::after
+            content: '°c'
+            font-size: 16px
+            position: relative
+            top: -35px
+    span
+        &::first-letter
+            text-transform: uppercase
+
+.temp-info
+    display: flex
+    width: 50%
+    max-width: 50%
+    font-size: 20px
+
+.temp-unit
+    position: relative
+    top: -1px
+
+
+.not-found
+    height: calc(100% - 140px)
+    display: flex
+    align-items: center
+    justify-content: center
+    opacity: 1
+    visibility: visible
+    transition: .2s
+
+.weather-detail__item
+    padding: 15px
+    background: rgba(#fff, 0.35)
+    border-radius: 25px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-size: 17px
+    color: #303345
+    font-weight: 50
+    margin-bottom: 10px
+    border: 1px solid rgba(#fff, 0.2)
+    &:last-child
+        margin-bottom: 0
+    .detail__left
+        display: flex
+        align-items: center
+
+    .detail__icon
+        width: 55px
+        height: 55px
+        border-radius: 18px
+        background: #fff
+        display: flex
+        align-items: center
+        justify-content: center
+        position: relative
+        z-index: 1
+        margin-right: 15px
+        img
+            max-width: 30px
+
+        .icon__blur
+            position: absolute
+            filter: blur(5px)
+            z-index: -1
+    .detail__value
+        padding-right: 20px
+
+
+.weather-detail__list
+    padding: 20px
+
+.date
+    color: #9A938C
+    font-size: 17px
+    font-weight: 100 
+    padding-top: 5px
+
+.search-modal
+    position: absolute
+    top: 70px
+    height: calc(100% - 70px)
+    opacity: 0
+    visibility: hidden
+    width: 100%
+    transition: .2s
+    padding: 0 20px
+    input
+        border: none
+        background: none
+        padding: 10px
+        text-align: center
+        font-family: 'Source Sans Pro', sans-serif
+        font-size: 20px
+        outline: none !important
+        width: 100%
+        font-weight: 600
+        display: block
+        color: #313341
+        border-bottom: 2px solid
+
+
+.weather-body
+    opacity: 1
+    visibility: visible
+    transition: .2s
+
+.open-search
+    .search-modal
+        opacity: 1
+        visibility: visible
+    .weather-body
+        opacity: 0
+        visibility: hidden
+
+    .not-found
+        opacity: 0
+        visibility: hidden
+
+.search-hints
+    padding-top: 15px
+    list-style: none
+    li
+        padding: 5px 0 
+    button
+        background: none
+        border: none
+        font-size: 16px
+        color: #313341
+        font-weight: 500
+        text-align: left
+
+@media screen and ( max-width:  575px)
+    .weather-wrapper
+        border: none
+        border-radius: 0
+        height: 100vh
+        width: 100% 
+
+
